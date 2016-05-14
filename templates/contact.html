@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+
+{% block title %}PyBursa contacts{% endblock title %}
+
+
+{% block blow_contact %}active{% endblock blow_contact %}
+
+
+{% block content %}
+  <div class="jumbotron">
+    <div class="container">
+      <h1 id="team1">Команда курса</h1>
+    </div>
+  </div>    
+  <div class="container marketing">
+    <h3 id="team2">Смело обращайтесь!</h3>  
+    <div class="row">
+      <div class="col-lg-4">
+        <img class="img-circle" src="{% static 'images/pavel.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+        <h2 id="founder">Founder</h2>
+        <p class="name">Name: Павел Обод</p>
+        <p>Skype: azaless</p>
+        <p>Email: itbursa100@gmail.com</p>
+        <p>Phone: +38-096-469-15-57</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="img-circle" src=".{% static 'images/alena.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+        <h2 id="manager">Manager</h2>
+        <p class="name">Name: Алена Чайка</p>
+        <p>Skype: alena.itbursa</p>
+        <p>Email: alena.itbursa@gmail.com</p>
+        <p>Phone: +38-063-625-07-55</p>
+        
+        </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="img-circle" src="{% static 'images/daria.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+        <h2 id="director">Director</h2>
+        <p class="name">Name: Дария Михалевич</p>
+        <p>Skype: darka.darka.darka.darka</p>
+        <p>Email: daria.mychalevych@gmail.com</p>
+        <p>Phone: +38-096-469-15-57</p>
+      </div><!-- /.col-lg-4 -->
+    </div>
+  </div>
+  </div>
+  <div class="alert alert-warning" role="alert">Поторопись!</div>
+{% endblock content %}
+ 

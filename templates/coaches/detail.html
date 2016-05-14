@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+
+
+{% block title %}Coach{% endblock title %}
+
+
+{% block content %}
+{% if coach %}
+  <table class="table table-condensed">
+    <thead><h3>{{ coach.user.first_name }} {{ coach.user.last_name }}</h3>
+      </thead>
+    <tbody>
+      <tr>
+        <td>дата рождения</td>
+        <td>{{ coach.date_of_birth|date:'j F, Y' }}</td>
+      </tr>
+      <tr>
+        <td>адрес</td>
+        <td>{{ coach.address }}</td>
+      </tr>
+      <tr>
+        <td>почта</td>
+        <td>{{ coach.email }}</td>
+      </tr>
+      <tr>
+        <td>логин skype</td>
+        <td>{{ coach.skype }}</td>
+      </tr>
+      <tr>
+        <td>телефон</td>
+        <td>{{ coach.phone }}</td>
+      </tr>
+      <tr>
+        <td>курсы учитель </td>
+        {% include "include/coach_include.html" %}
+      </tr>
+    </tbody>
+  </table>
+{% endif %}
+{% endblock content %}  
+  
+  

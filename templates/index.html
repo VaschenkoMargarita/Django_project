@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+
+
+{% block title %}PyBursaMain{% endblock title %}
+
+
+
+
+
+{% block content %}
+{% if messages %}
+ 
+<div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{% for message in messages %}{{ message }}{% endfor %}</div>
+{% endif %}
+  <div class="jumbotron">
+    <div class="container">
+      <div class="page-header">
+        <h1>ooniversity</h1>
+        <h3>Мы специализируемся на современных языках программирования, которые помогут Вам бытьв тренде разработки сегодня и завтра.<h3>
+     </div>
+    </div>
+  </div> 
+  <h2>Выбирай, на каком курсе хочешь учиться!</h2>
+  <div>
+    <button class="btn"><a href="{% url 'courses:add' %}">Добавить новый курс</a></button>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Курс</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if courses %}
+      {% for course in courses %}
+        <tr>
+          <td><a href="{% url 'courses:detail' course.id %}">{{ course|upper }}</a></td>
+          <td>{{ course.short_description|title }}</td>
+          <td><button class="btn"><a href="{% url 'courses:edit' course.id %}">Редактировать курс</a></button></td>
+          <td><button class="btn"><a href="{% url 'courses:remove' course.id %}">Удалить курс</a></button></td>
+        </tr>
+      {% endfor %}
+      {% endif %}
+     </tbody>
+  </table>
+ 
+{% endblock content %}   
